@@ -1,5 +1,5 @@
 var timerEl = document.getElementById("timer");
-var timeLeft = 2;
+var timeLeft = 5;
 var startQuizBtnEl = document.getElementById("start-quiz");
 var questionText = document.getElementById("questions");
 var idCounter = 0;
@@ -11,6 +11,7 @@ var qAndA_Obj = {
   answer4: "",
   correctAnswer: ""
 };
+var answerListEl = document.getElementById("answer-list");
 
 
 function countdown() {
@@ -24,10 +25,10 @@ function countdown() {
         timeLeft--;
       } 
       // checking to see if 1 second it left and displaying that time using textContent
-      else if (timeLeft === 1) {
-        timerEl.textContent = timeLeft + " second remaining";
-        timeLeft--;
-      } 
+      // else if (timeLeft === 1) {
+      //   timerEl.textContent = timeLeft + " second remaining";
+      //   timeLeft--;
+      // } 
     // set timer to nothing and clear the interval so timer doesn't start again
       else {
         timerEl.textContent = "Time 0";
@@ -112,13 +113,52 @@ function countdown() {
   };
 
   function diplayQuestionsAndAnswers() {
-    console.log("test")
+    // console.log("test")
+    var quetionsEl = document.getElementById("questions");
+    // var answerListEl = document.getElementById("answer-list");
+
+    // load questions and answers based on id counter
+    qAndA_Obj = JSON.parse(localStorage.getItem(idCounter));
+
+    // display question
+    quetionsEl.textContent = qAndA_Obj.question;
+
+    //add list items to ordered list
+    var listItemEl = document.createElement("li");
+    listItemEl.className = "list-item";
+    listItemEl.textContent = qAndA_Obj.answer1;
+    listItemEl.setAttribute("id", "answer1");
+    answerListEl.appendChild(listItemEl);
+
+    var listItemEl = document.createElement("li");
+    listItemEl.className = "list-item";
+    listItemEl.textContent = qAndA_Obj.answer2;
+    listItemEl.setAttribute("id", "answer2");
+    answerListEl.appendChild(listItemEl);
+
+    var listItemEl = document.createElement("li");
+    listItemEl.className = "list-item";
+    listItemEl.textContent = qAndA_Obj.answer3;
+    listItemEl.setAttribute("id", "answer3");
+    answerListEl.appendChild(listItemEl);
+
+    var listItemEl = document.createElement("li");
+    listItemEl.className = "list-item";
+    listItemEl.textContent = qAndA_Obj.answer4;
+    listItemEl.setAttribute("id", "answer4");
+    answerListEl.appendChild(listItemEl);
+  };
+
+  function answerChosen(event) {
+    console.log(event.target.id)
   }
 
   document.addEventListener("DOMContentLoaded", function() {
 
+    // hide result display on load
     var resultEl = document.getElementById("result");
     resultEl.style.display = "none";
 
   });
-  startQuizBtnEl.addEventListener("click", startQuiz)
+  startQuizBtnEl.addEventListener("click", startQuiz);
+  answerListEl.addEventListener("click", answerChosen);
