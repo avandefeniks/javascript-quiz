@@ -20,16 +20,28 @@
             Keep in mind that incorrect answers will penalize your 
             score/time by 10 seconds
             </h3> 
+            <div>
+            <p id="score" class="score"></p>
+        </div>
+        <div class="form-div">
+            <form id="submit-initials">
+                <label for="initials" id="enter-initials">Enter Initials</label>
+                <input type="text" id="initials" class="initials" name="initials">
+                <button id="initials-btn" class="initials-btn">Submit</button>
+                </form>
+                <button id="retake-btn" class="retake-btn">Retake</button>
+                <button id="clear-highscore-btn" class="clear-highscore-btn">Clear High Score</button>
+        </div>
         </div>
        
         <div class="answers">
             <!-- button to start the quiz -->
             <button id="start-quiz" class="btn-start">Start Quiz</button>
             <ol id="answer-list" class="ordered-list"></ol>
-            <div class="result-div">
-                <p id="result" class="result">Correct!</p>
-            </div>
         </div>
+            <div class="result-div">
+                <div id="result" class="result">Correct!</div>
+            </div>
     </div>
 
     <script src="./assets/js/script.js"></script>

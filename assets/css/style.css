@@ -33,11 +33,25 @@ header {
     display: flex;
     text-align: left;
     margin: 50px 0 10px 0;
+    width: 75%;
+    flex-direction: column;
 }
+
+.score{
+    margin: 10px 0 10px 0;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+}
+
 .answers {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    width: 75%;
 }
 
 .btn-start {
@@ -48,19 +62,74 @@ header {
     background-color: var(--btn-list);
     border-radius: 10px;
     border: none;
+    width: 100px;
 }
 
 .btn-start:hover {
     background-color: var(--hoverbg);
 }
 
+.initials-btn {
+    padding: 5px;
+    margin: 10px;
+    font-size: 20px;
+    color: var(--text-color);
+    background-color: var(--btn-list);
+    border-radius: 10px;
+    border: none;
+    width: 100px;
+}
+
+.initials-btn:hover {
+    background-color: var(--hoverbg);
+}
+
+.retake-btn {
+    padding: 5px;
+    margin: 10px;
+    font-size: 20px;
+    color: var(--text-color);
+    background-color: var(--btn-list);
+    border-radius: 10px;
+    border: none;
+    width: 100px;
+}
+
+.retake-btn:hover {
+    background-color: var(--hoverbg);
+}
+
+.clear-highscore-btn {
+    padding: 5px;
+    margin: 10px;
+    font-size: 20px;
+    color: var(--text-color);
+    background-color: var(--btn-list);
+    border-radius: 10px;
+    border: none;
+    width: 100px; 
+}
+
+.clear-highscore-btn:hover {
+    background-color: var(--hoverbg);
+}
+
+.result-div {
+    display: flex;
+    justify-content: flex-start;
+    width: 75%;
+
+}
+
 .result {
+    display: flex;
+    justify-content: flex-start;
     border-top: 2px solid grey;
     opacity: 50%;
-    text-align: center;
+    text-align: left;
     font-size: 20px;
     font-style: italic;
-    /*width: 400px;*/
+    width: 75%;
 }
 
 .list-item {
