@@ -1,5 +1,5 @@
 var timerEl = document.getElementById("timer");
-var timeLeft = 15;
+var timeLeft = 30;
 var startQuizBtnEl = document.getElementById("start-quiz");
 var questionText = document.getElementById("questions");
 var idCounter = 0;
@@ -125,10 +125,7 @@ function countdown() {
   };
 
   function diplayQuestionsAndAnswers() {
-    // console.log("test")
-    // var quetionsEl = document.getElementById("questions");
-    // var answerListEl = document.getElementById("answer-list");
-
+    
     // check to see if the list is still populated
     // solution found at https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes
     if (answerListEl.hasChildNodes) {
@@ -200,8 +197,7 @@ function countdown() {
     initialsLabelEl.style.display = "block";
     initialsInputEl.style.display = "block";
     initialsBtnEl.style.display = "block";
-      // call recordScore function
-      //recordScore(score);
+      
       }
     }
     else {
@@ -232,8 +228,7 @@ function countdown() {
     initialsLabelEl.style.display = "block";
     initialsInputEl.style.display = "block";
     initialsBtnEl.style.display = "block";
-        // call recordScore function
-        //recordScore(score);
+        ;
         }
     }
 
